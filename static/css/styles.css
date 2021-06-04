@@ -2973,7 +2973,7 @@ textarea.form-control-lg {
 .btn-primary:disabled, .btn-primary.disabled {
   color: #fff;
   background-color: #8C2A44;
-  border-color: #08C2A44;
+  border-color: #8C2A44;
 }
 
 .btn-secondary {
