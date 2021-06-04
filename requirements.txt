@@ -8,3 +8,4 @@ Jinja2==3.0.1
 MarkupSafe==2.0.1
 Werkzeug==2.0.1
 wincertstore==0.2
+joblib==1.0.1
