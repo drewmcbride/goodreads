@@ -7,13 +7,13 @@
         <meta name="Andrew" content="Andrew Neher" />
         <title>Landing Page - Summary Rating</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="/static/css/styles.css" rel="stylesheet" />
     </head>
     <body>
         <!-- Navigation-->
@@ -28,14 +28,14 @@
                         <div class="text-center text-white">
                             <!-- Page heading-->
                             <div>
-                                <img src="assets/img/SR_logo.png">
+                                <img src="/static/assets/img/SR_logo.png">
                             </div>
                             <h3 class="mb-5">Enter A Book Description To Have Our Model Rate Your Book!</h3>
                             <!-- Signup form-->
-                            <form>
+                            <form action= "/predict" method= "POST"> 
                                 <div class="input-group input-group-lg">
-                                    <input class="form-control" type="text" placeholder="Enter A Book Description" aria-label="Enter A Book Description" aria-describedby="button-submit" />
-                                    <button class="btn btn-primary" id="button-submit" type="button">Submit</button>
+                                    <input class="form-control" id="text" name="text" type="text" placeholder="Enter A Book Description" aria-label="Enter A Book Description" aria-describedby="button-submit" />
+                                    <button class="btn btn-primary" id="button-submit" type="submit">Submit</button>
                                 </div>
                             </form>
                         </div>
@@ -48,7 +48,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
-
+                        <h4> {{ prediction }}</h4>
                     </div>
                 </div>
             </div>

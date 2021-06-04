@@ -1,26 +1,31 @@
 """The App."""
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from joblib import load
-
-clf = load("clf.joblib")
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return '<a href = "./predict?text=exampletext"> ./predict?text=exampletext</a>'
+    return render_template("index.html") 
+    #'<a href = "./predict?text=exampletext"> ./predict?text=exampletext</a>'
 
-@app.route("/predict")
+@app.route("/predict", methods = ['POST'])
 def predict():
     """Takes a POST request with a key of \"text\" and the text to be classified."""
-    text = request.args.get("text")
+    text = request.form.get("text")
     # data_dict = request.get_json()
-
+    # get data in correct ofrmat and then do your predict and stuff
+    clf = load("clf.joblib")
+    prediction = clf.predict([text])[0]
+    #if prediction == 1:
+    return render_template("index.html", prediction=prediction)
+    #else:
+        #return render_template("index.html", prediction="bad")
     # text = [data_dict["text"]]
-    print(text)
+    #print(text)
 
-    return jsonify({"result": clf.predict([text])[0]})
+    #return jsonify({"result": clf.predict([text])[0]})
 
 if __name__ == "__main__":
     app.run(debug=True)
