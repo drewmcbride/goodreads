@@ -15,7 +15,7 @@ Check out [our app](https://good-book-app.herokuapp.com/) to see the model in ac
 Please refer to the requirements.txt file to be sure you have the necessary tools and libaries to run our code locally. 
 
 Once you have everything installed, run the following in your terminal:
-`python app.py'
+`python app.py`
 
 ## 💻 Contributors
 * Charlie Denys - Machine Learning Support
